@@ -9,3 +9,6 @@ with open('numbers', 'r+') as fp:
 
     fp.seek(0, os.SEEK_END)
     fp.write(f'{counter}')
+
+    """ my comment"""
+    """ my comment2"""
