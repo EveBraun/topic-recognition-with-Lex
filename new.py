@@ -1,3 +1,5 @@
+"""comment3"""
+
 import os
 
 counter, sum_ = 0, 0
