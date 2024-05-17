@@ -1,13 +1,17 @@
 'Task about fractions'
 
-class InvalidNumerator(ValueError):
-    """Value must be int type"""
+import exeptions
 
-class InvalidDenominator(ValueError):
-    """Value must be int type"""
-
-class ZeroDenominator(ValueError):
-    """Value must be int type"""
+class FractionOperators:
+    def __mul__(self, otherFraction) -> 'Fraction':
+        numerator = self.numerator * otherFraction.numerator
+        denominator = self.denominator * otherFraction.denominator
+        return Fraction(numerator, denominator)
+    
+    def mult (self, otherFraction):
+        numerator = self.numerator * otherFraction.numerator
+        denominator = self.denominator * otherFraction.denominator
+        return Fraction(numerator, denominator)
 
 class Fraction:
     def __init__(self, numerator: int, denominator: int) -> None:
@@ -23,16 +27,16 @@ class Fraction:
     # метод для ввода данных
     def set_numerator(self, new_value: int) -> None:
         if not isinstance(new_value, int):
-            raise InvalidNumerator
+            raise exeptions.InvalidNumerator
                      
         self.numerator = new_value
 
     def set_denominator(self, new_value: int) -> None:
         if not isinstance(new_value, int):
-            raise InvalidNumerator
+            raise exeptions.InvalidNumerator
         
         if new_value == 0:
-            raise ZeroDenominator
+            raise exeptions.ZeroDenominator
         
         self.denominator = new_value
 
